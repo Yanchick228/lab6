@@ -1,0 +1,42 @@
+<html>
+<head>
+<title>Laba6</title>
+<meta charset="UTF-8">
+</head>
+<body>
+<script>
+function person(firstName, lastName, birthDate){
+this.name = firstName;
+this.show = function(){
+document.write(`Имя: ${firstName}, фамилия: ${lastName}, дата рождения: ${birthDate} <br>`);
+};
+this.str = function(car, book){
+document.write(`${this.name} читает книгу ${book.name} про машину ${car.marka}`)
+};
+}
+
+function car(marka, yearVihoda, obiem){
+this.marka = marka;
+this.show = function(){
+document.write(`Марка: ${marka}, год выхода: ${yearVihoda}, объём двигателя: ${obiem} <br>`);
+};
+}
+
+function book(name, autor, year){
+this.name = name;
+this.show = function(){
+document.write(`Название книги: ${name}, автор: ${autor}, год выпуска: ${year} <br>`);
+};
+}
+
+let personobj = new person('Иван','Иванович', 1985);
+let carobj = new car('Фиат','1995', 3.5);
+let bookobj = new book('каталог винтажных авто','Джереми Кларксон', 1985);
+
+personobj.show();
+carobj.show();
+bookobj.show();
+personobj.str(carobj, bookobj);
+</script>
+</body>
+</html>
